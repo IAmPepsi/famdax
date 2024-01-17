@@ -1,5 +1,7 @@
+// lib/screens/home_screen.dart
 import 'package:flutter/material.dart';
 import 'chat_screen.dart';
+import 'registration_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -14,16 +16,33 @@ class _HomeScreenState extends State<HomeScreen> {
         title: Text('Chat Messenger'),
       ),
       body: Center(
-        child: GestureDetector(
-          onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => ChatScreen(username: 'exampleUser'),
-              ),
-            );
-          },
-          child: Text('Welcome to the Chat Messenger! Tap to chat.'),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ChatScreen(username: 'exampleUser'),
+                  ),
+                );
+              },
+              child: Text('Welcome to the Chat Messenger! Tap to chat.'),
+            ),
+            SizedBox(height: 16.0),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => RegistrationScreen(),
+                  ),
+                );
+              },
+              child: Text('Register'),
+            ),
+          ],
         ),
       ),
     );

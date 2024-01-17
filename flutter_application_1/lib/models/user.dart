@@ -1,5 +1,6 @@
+// lib/models/user.dart
 class User {
-  String username;
+  final String username;
 
   User({required this.username});
 }
